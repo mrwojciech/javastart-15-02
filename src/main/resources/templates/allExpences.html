@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Moje wydatki</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+
+<body>
+
+<h1>Product list</h1>
+
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>CATEGORY</th>
+    </tr>
+    <tr th:each="expence : ${expences}">
+        <td th:text="${expence.name}">Onions</td>
+        <td th:text="${expence.price}">2.41</td>
+        <td th:text="${expence.category}">yes</td>
+    </tr>
+</table>
+
+<p>
+    <a href="../addExpence.html" th:href="@{/addExpence}">Dodaj</a>
+</p>
+
+</body>
+
+</html>
