@@ -6,28 +6,16 @@
 </head>
 <body>
 <h1>Dodaj wydatek</h1>
-
 <form th:action="@{/addExpence}" method="post" th:object="${expence}">
     <p>Nazwa <input type="text" th:field="*{name}"/></p>
     <p>Cena <input type="text" th:field="*{price}"/></p>
-   <!-- <p>Kategoria <input type="text" th:field="*{category}"/></p>-->
 
     <p>Kategoria
-    <select>
-
+    <select th:field="*{category}">
         <option th:each="category: ${T(com.example.demo15_02.Category).values()}" th:value="${category}" th:text="${category}"></option>
-        <!--
-            <option th:each="state : ${T(com.example.demo15_02.Category).values()}"
-                    th:field="*{state}"
-                    th:value="${state}"
-                    th:text="${state}">
-            </option>-->
         </select>
-
     </p>
     <input type="submit" value="Dodaj"/>
 </form>
-
-
 </body>
 </html>
